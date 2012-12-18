@@ -2,9 +2,40 @@
 layout: default
 title: The Latest Chromium Address
 ---
+<script type="text/javascript">
+	function convert(str)
+	{
+		var chromiumAddress = "http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win/VERSION/chrome-win32.zip";
+		if(str==null || str=="" || isNaN(str))
+			return;
+		var result = chromiumAddress.replace(/VERSION/, str);
+		document.getElementById("version").value=result;
+		//alert(result);
+		result = "<a href='"+result+"' target='_BLANK'>The latest Chromium Building</a>";
+		document.getElementById("result").innerHTML=result;
+		//CopyToClipboard(result);
+		return result;
+	}
+	function CopyToClipboard(text) {
+	    Copied = text.createTextRange();
+	    Copied.execCommand("Copy");
+	}
+</script>
 <h2>{{ page.title }}</h2>
 <p></p>
-http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win/173649/chrome-win32.zip
-http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win/LAST_CHANGE
+	<p>
+	<a href="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win/LAST_CHANGE" target="_BLANK">The Version Number of Latest Chromium</a>
+	</p>
+	<p>
+	<iframe src="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win/LAST_CHANGE" seamless frameborder=1 width="100" height="60"></iframe>
+	</p>
+	<p>
+	<input id="version" onmouseover="this.focus();this.select()" onmouseout="this.selectionStart=this.value.length;this.blur();convert(version.value);" onkeydown="if(event.keyCode==13)convert(this.value)" style="width:980"></input>
+	<br/>
+	<botton id="convert" onclick="convert(version.value)">Get the zip file Address</botton>
+	</p>
+	<p>
+	<div id="result"></div>
+	</p>
 <p>{{ page.date | date_to_string }}</p>
 
