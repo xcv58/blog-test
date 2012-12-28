@@ -9,14 +9,14 @@
 　　　　{{ content }}
 　　　　</div>
 
-　　　　<div id="qrcode">
-　　　　<img src="http://api.qrserver.com/v1/create-qr-code/?data={{ site.url }}{{ page.url }}&amp;size=80x80" alt="{{ page.title }}" title="" />
-　　　　</div>
-
 　　　　<!-- UY BEGIN -->
 　　　　<div id="uyan_frame"></div>
 　　　　<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1607770" async=""></script>
 　　　　<!-- UY END -->
+
+　　　　<div id="qrcode">
+　　　　<img src="http://api.qrserver.com/v1/create-qr-code/?data={{ site.url }}{{ page.url }}&amp;size=80x80" alt="{{ page.title }}" title="" />
+　　　　</div>
 　　</body>
 　　</html>
 
