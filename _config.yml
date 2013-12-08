@@ -2,8 +2,8 @@ safe:        false
 auto:        false
 server:      false
 server_port: 4000
-baseurl:    /blog
-url: /
+baseurl:    /
+url: http://xcv58.github.com/blog
 
 source:      .
 destination: ./_site
